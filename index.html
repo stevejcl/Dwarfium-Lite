@@ -177,12 +177,12 @@
 
     <div class="container">
         <div class="lang-switch">
-            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-            <button class="lang-btn " onclick="switchLang('fr')">FR</button>
+            <button class="lang-btn active" onclick="switchLang('fr')">FR</button>
+            <button class="lang-btn" onclick="switchLang('en')">EN</button>
         </div>
 
         <!-- FRENCH CONTENT -->
-        <div id="fr" class="lang">
+        <div id="fr" class="lang active">
             <header>
                 <h1>🌌 Astro Dwarf Session</h1>
                 <p>Automatisation, suivi et contrôle multi-télescopes pour Dwarf II, Dwarf 3 et Dwarf Mini</p>
@@ -203,11 +203,12 @@
                     <li><strong>📡 Connexion & Appairage Flexibles :</strong> Appairage Bluetooth (BLE) direct ou configuration manuelle par IP/UID sans Bluetooth.</li>
                     <li><strong>📍 Gestion des Sites :</strong> Associez réseau Wi-Fi et coordonnées géographiques sous forme de "Sites" réutilisables.</li>
                     <li><strong>🤖 Programmation & Séquençage Automatique :</strong> Créez des séquences complètes (GoTo, calibration, résolution EQ, réglages caméra, captures, mosaïques) exécutables immédiatement ou programmables.</li>
+                    <li><strong>⚖️ Répartition automatique des cibles :</strong> Envoi automatique des cibles vers les télescopes disponibles du même modèle.</li>
                     <li><strong>🌌 Planificateur de Mosaïque Voie Lactée :</strong> Carte du ciel adaptative selon le crépuscule, contrôle d'impact lunaire et découpage en tuiles.</li>
                     <li><strong>🖼️ Explorateur de Sessions Astro :</strong> Galerie photo des sessions stockées sur l'appareil avec leurs métadonnées (exposition, gain, filtre IR).</li>
                     <li><strong>👀 Mode Spectateur (/watch) :</strong> Mode lecture seule sécurisé pour partager le flux en direct sur le réseau local sans risque de modification.</li>
-                    <li><strong>🔌 API REST Intégrée :</strong> Depuis n'importe quelle page web externe, accédez à vos Dwarfs, vérifiez leur statut et envoyez-leur directement des séquences.</li>
-                    <li><strong>⚖️ Répartition automatique des cibles :</strong> Envoi automatique des cibles vers les télescopes disponibles du même modèle.</li>                </ul>
+                    <li><strong>📱 Support PWA :</strong> S'installe directement sur l'écran d'accueil de votre smartphone ou tablette.</li>
+                </ul>
             </section>
 
             <section>
@@ -222,40 +223,26 @@
 
             <section>
                 <h2>🚀 Installation & Démarrage rapide</h2>
+                <p><strong>Prérequis :</strong> Python 3.10+ (Windows, macOS, Linux)</p>
+                
+                <pre><code># 1. Cloner le dépôt
+git clone &lt;URL_DE_VOTRE_REPO&gt;
+cd astro_dwarf_session
 
-                <!-- Option 1: Executables pré-compilés -->
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">📦 Version intégrée (Prête à l'emploi)</h3>
-                    <p>Téléchargez la version pré-compilée pour votre système d'exploitation depuis la page des versions :</p>
-                    <p style="margin: 1rem 0;"><a href="https://github.com/stevejcl/astro_dwarf_session/releases/latest" target="_blank" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none;">📥 Télécharger la dernière version sur GitHub Releases</a></p>
-                    <ul>
-                        <li><strong>🪟 Windows :</strong> Version pré-compilée entièrement validée.</li>
-                        <li><strong>🐧 Linux & 🍎 macOS :</strong> Versions exécutables intégrées (<em>Remarque : versions expérimentales non encore validées</em>).</li>
-                    </ul>
-                </div>
+# 2. Créer et activer l'environnement virtuel
+python -m venv myenv
+myenv\Scripts\activate  # Windows (ou source myenv/bin/activate sous Linux/macOS)
 
-                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+# 3. Installer les dépendances
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt --target .</code></pre>
 
-                <!-- Option 2: Version Développeur -->
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">👨‍💻 Version Développeur (Code Source)</h3>
-                    <p><strong>Prérequis :</strong> Python 3.12+ (requis par NiceGUI) sur Windows, macOS ou Linux[cite: 1].</p>
-                    
-                    <pre><code># 1. Cloner le dépôt
-            git clone https://github.com/stevejcl/astro_dwarf_session.git
-            cd astro_dwarf_session
+                <p style="margin-top: 1rem;"><strong>Lancement de l'application :</strong></p>
+                <pre><code># Mode classique (Interface graphique native + serveur web)
+python astro_dwarf_ui.py
 
-            # 2. Créer et activer un environnement virtuel
-            python -m venv myenv
-            myenv\Scripts\activate  # Windows (ou source myenv/bin/activate sous Linux/macOS)
-
-            # 3. Installer les dépendances
-            python -m pip install -r requirements.txt
-            python -m pip install -r requirements-local.txt --target .</code></pre>
-
-                    <p style="margin-top: 1rem;"><strong>Lancement de l'application :</strong></p>
-                    <pre><code>python astro_dwarf_ui.py</code></pre>
-                </div>
+# Mode serveur uniquement (Headless / Accès distant)
+python astro_dwarf_ui.py --no-native</code></pre>
             </section>
 
             <footer>
@@ -264,7 +251,7 @@
         </div>
 
         <!-- ENGLISH CONTENT -->
-        <div id="en" class="lang active">
+        <div id="en" class="lang">
             <header>
                 <h1>🌌 Astro Dwarf Session</h1>
                 <p>Automated, multi-telescope imaging session manager for Dwarf II, Dwarf 3, and Dwarf Mini</p>
@@ -285,11 +272,12 @@
                     <li><strong>📡 Flexible Pairing & Connection:</strong> Direct Bluetooth (BLE) pairing or a manual IP/UID config wizard when Bluetooth is unavailable.</li>
                     <li><strong>📍 Site Management:</strong> Bundle Wi-Fi credentials and location coordinates into reusable "Sites".</li>
                     <li><strong>🤖 Program Automation & Scheduling:</strong> Build sequences (GoTo, calibration, EQ Solving, camera settings, captures, Mosaics) to run live or schedule for later.</li>
+                    <li><strong>⚖️ Target Load Balancing:</strong> Automatically dispatch targets across available telescopes of the same model.</li>
                     <li><strong>🌌 Milky Way Mosaic Planner:</strong> Interactive twilight-aware sky chart, Moon check, and automatic tile grid generation.</li>
                     <li><strong>🖼️ Astro Session Explorer:</strong> Browse real astro sessions directly from device storage with detailed shooting metadata.</li>
                     <li><strong>👀 Read-Only Watch Mode (/watch):</strong> Safe spectator mode to share live previews and session updates across your network without control access.</li>
-                    <li><strong>🔌 Integrated REST API:</strong> From any external web page, access your Dwarfs, check their status, and send sequences directly to them.</li>
-                    <li><strong>⚖️ Automatic Target Load Balancing:</strong> Automatically route targets to available telescopes of the same model.</li>                </ul>
+                    <li><strong>📱 PWA Support:</strong> Install straight to your phone or tablet home screen without a browser search bar.</li>
+                </ul>
             </section>
 
             <section>
@@ -303,41 +291,27 @@
             </section>
 
             <section>
-                <h2>🚀 Installation & Quick Start</h2>
+                <h2>🚀 Quick Start & Installation</h2>
+                <p><strong>Prerequisites:</strong> Python 3.10+ (Windows, macOS, Linux)</p>
+                
+                <pre><code># 1. Clone the repository
+git clone &lt;YOUR_REPO_URL&gt;
+cd astro_dwarf_session
 
-                <!-- Option 1: Standalone Releases -->
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">📦 Standalone Version (Ready to Use)</h3>
-                    <p>Download the pre-built version for your operating system directly from the releases page:</p>
-                    <p style="margin: 1rem 0;"><a href="https://github.com/stevejcl/astro_dwarf_session/releases/latest" target="_blank" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none;">📥 Download Latest Release on GitHub</a></p>
-                    <ul>
-                        <li><strong>🪟 Windows:</strong> Pre-built standalone package fully validated.</li>
-                        <li><strong>🐧 Linux & 🍎 macOS:</strong> Integrated executable packages (<em>Note: experimental, not yet fully validated</em>).</li>
-                    </ul>
-                </div>
+# 2. Create and activate virtual environment
+python -m venv myenv
+myenv\Scripts\activate  # On Windows (or source myenv/bin/activate on Linux/macOS)
 
-                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+# 3. Install dependencies
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt --target .</code></pre>
 
-                <!-- Option 2: Developer Mode -->
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">👨‍💻 Developer Mode (Source Code)</h3>
-                    <p><strong>Prerequisites:</strong> Python 3.12+ (required by NiceGUI) on Windows, macOS, or Linux[cite: 1].</p>
-                    
-                    <pre><code># 1. Clone the repository
-            git clone https://github.com/stevejcl/astro_dwarf_session.git
-            cd astro_dwarf_session
+                <p style="margin-top: 1rem;"><strong>Running the App:</strong></p>
+                <pre><code># Native desktop mode + web server
+python astro_dwarf_ui.py
 
-            # 2. Create and activate a virtual environment
-            python -m venv myenv
-            myenv\Scripts\activate  # Windows (or source myenv/bin/activate on Linux/macOS)
-
-            # 3. Install dependencies
-            python -m pip install -r requirements.txt
-            python -m pip install -r requirements-local.txt --target .</code></pre>
-
-                    <p style="margin-top: 1rem;"><strong>Running the application:</strong></p>
-                    <pre><code>python astro_dwarf_ui.py</code></pre>
-                </div>
+# Web server only (Headless mode)
+python astro_dwarf_ui.py --no-native</code></pre>
             </section>
 
             <footer>
