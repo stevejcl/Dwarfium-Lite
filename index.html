@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Dwarf Session - Présentation</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --primary-hover: #0284c7;
+            --border-color: #334155;
+            --code-bg: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: "Fira Code", Consolas, Monaco, monospace;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🌌 Astro Dwarf Session</h1>
+            <p>Automatisation, suivi et contrôle multi-télescopes pour Dwarf II, Dwarf 3 et Dwarf Mini</p>
+        </header>
+
+        <section>
+            <h2>📌 À propos du projet</h2>
+            <p><strong>Astro Dwarf Session</strong> est une application web locale moderne et légère développée avec <a href="https://nicegui.io" style="color: var(--primary);">NiceGUI</a>[cite: 1]. Elle permet de piloter, surveiller et automatiser des sessions d'imagerie astronomique pour l'ensemble de la gamme de smart telescopes <strong>Dwarf</strong>[cite: 1].</p>
+            <p>L'application s'exécute localement et s'utilise aussi bien depuis une fenêtre de bureau native que depuis un navigateur sur PC, smartphone ou tablette sur le même réseau[cite: 1].</p>
+        </section>
+
+        <section>
+            <h2>✨ Fonctionnalités clés</h2>
+            <ul>
+                <li><strong>🎛️ Dashboard « Mission Control » Multi-Télescopes :</strong> Suivez et contrôlez plusieurs Dwarf en parallèle (statut, batterie, température, stockage, progression des captures et aperçus en direct)[cite: 1].</li>
+                <li><strong>📡 Connexion & Appairage Flexibles :</strong> Appairage Bluetooth (BLE) direct ou configuration manuelle par IP/UID[cite: 1].</li>
+                <li><strong>📍 Gestion des Sites :</strong> Associez réseau Wi-Fi et coordonnées géographiques sous forme de "Sites" réutilisables[cite: 1].</li>
+                <li><strong>🗓️ Programmation & Séquençage Automatique :</strong> Créez des séquences complètes (GoTo, calibration, résolution EQ, réglages caméra, captures, mosaïques) exécutables immédiatement ou programmables[cite: 1].</li>
+                <li><strong>⚖️ Répartition automatique des cibles :</strong> Envoi automatique des cibles vers les télescopes disponibles du même modèle[cite: 1].</li>
+                <li><strong>🌌 Planificateur de Mosaïque Voie Lactée :</strong> Carte du ciel adaptative selon le crépuscule, contrôle d'impact lunaire et découpage en tuiles[cite: 1].</li>
+                <li><strong>🖼️ Explorateur de Sessions Astro :</strong> Galerie photo des sessions stockées sur l'appareil avec leurs métadonnées (exposition, gain, filtre IR)[cite: 1].</li>
+                <li><strong>👀 Mode Spectateur (/watch) :</strong> Mode lecture seule sécurisé pour partager le flux en direct sur le réseau local sans risque de modification[cite: 1].</li>
+                <li><strong>📱 Support PWA :</strong> S'installe directement sur l'écran d'accueil de votre smartphone ou tablette[cite: 1].</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📸 Aperçu de l'interface</h2>
+            <div class="gallery">
+                <img src="https://github.com/user-attachments/assets/cd685d0f-505a-4468-9543-40224d2020b6" alt="Dashboard principal">
+                <img src="https://github.com/user-attachments/assets/98211df4-4266-41f5-8ff0-516ef13b59c3" alt="Détail d'une session">
+                <img src="https://github.com/user-attachments/assets/e5a28f22-86f8-455c-93a0-c3d21811cc96" alt="Éditeur de programmes">
+                <img src="https://github.com/user-attachments/assets/13fa5367-5671-43e5-ae4b-88154625fcf3" alt="Explorateur de sessions">
+            </div>
+        </section>
+
+        <section>
+            <h2>🚀 Installation & Démarrage rapide</h2>
+            <p><strong>Prérequis :</strong> Python 3.10+ (Windows, macOS, Linux)[cite: 1]</p>
+            
+            <pre><code># 1. Cloner le dépôt
+git clone &lt;URL_DE_VOTRE_REPO&gt;
+cd astro_dwarf_session
+
+# 2. Créer et activer l'environnement virtuel
+python -m venv myenv
+myenv\Scripts\activate  # Windows (ou source myenv/bin/activate sous Linux/macOS)
+
+# 3. Installer les dépendances
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt --target .</code></pre>
+
+            <p style="margin-top: 1rem;"><strong>Lancement de l'application :</strong></p>
+            <pre><code># Mode classique (Interface graphique native + serveur web)
+python astro_dwarf_ui.py
+
+# Mode serveur uniquement (Headless / Accès distant)
+python astro_dwarf_ui.py --no-native</code></pre>
+        </section>
+
+        <footer>
+            <p>Projet distribué sous licence MIT[cite: 1] • Développé pour la communauté des téléscopes Dwarf</p>
+        </footer>
+    </div>
+
+</body>
+</html>
