@@ -177,8 +177,8 @@
 
     <div class="container">
         <div class="lang-switch">
-            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-            <button class="lang-btn " onclick="switchLang('fr')">FR</button>
+            <button id="btn-en" class="lang-btn" onclick="switchLang('en')">EN</button>
+            <button id="btn-fr" class="lang-btn" onclick="switchLang('fr')">FR</button>
         </div>
 
         <!-- FRENCH CONTENT -->
@@ -207,18 +207,17 @@
                     <li><strong>🖼️ Explorateur de Sessions Astro :</strong> Galerie photo des sessions stockées sur l'appareil avec leurs métadonnées (exposition, gain, filtre IR).</li>
                     <li><strong>👀 Mode Spectateur (/watch) :</strong> Mode lecture seule sécurisé pour partager le flux en direct sur le réseau local sans risque de modification.</li>
                     <li><strong>🔌 API REST Intégrée :</strong> Depuis n'importe quelle page web externe, accédez à vos Dwarfs, vérifiez leur statut et envoyez-leur directement des séquences.</li>
-                    <li><strong>⚖️ Répartition automatique des cibles :</strong> Envoi automatique des cibles vers les télescopes disponibles du même modèle.</li>                </ul>
+                    <li><strong>⚖️ Répartition automatique des cibles :</strong> Envoi automatique des cibles vers les télescopes disponibles du même modèle.</li>
+                </ul>
             </section>
 
             <section>
                 <h2>📸 Aperçu de l'interface</h2>
                 <div class="gallery">
-                    <img src="https://github.com/user-attachments/assets/7e9a2e86-b1a8-4cee-b14f-4255d819f636" alt="Dashboard principal">
-                    <img src="https://github.com/user-attachments/assets/facd3ffc-03c1-4f30-9660-607ffd01b9f8" alt="Dashboard Capture Live"> 
-                    <img src="https://github.com/user-attachments/assets/dfb651e3-46fe-4b2a-b9ae-a344e4bdfb03" alt="Détail d'une session">
-                    <img src="https://github.com/user-attachments/assets/92c88521-93c8-4871-ad7e-67c7e7867754" alt="Éditeur de programmes">
+                    <img src="https://github.com/user-attachments/assets/cd685d0f-505a-4468-9543-40224d2020b6" alt="Dashboard principal">
+                    <img src="https://github.com/user-attachments/assets/98211df4-4266-41f5-8ff0-516ef13b59c3" alt="Détail d'une session">
+                    <img src="https://github.com/user-attachments/assets/e5a28f22-86f8-455c-93a0-c3d21811cc96" alt="Éditeur de programmes">
                     <img src="https://github.com/user-attachments/assets/13fa5367-5671-43e5-ae4b-88154625fcf3" alt="Explorateur de sessions">
-                    <img src="https://github.com/user-attachments/assets/78209d87-05c4-4ef6-81f2-ee9a8cb356cd" alt="Vue détails session">
                 </div>
             </section>
 
@@ -241,19 +240,19 @@
                 <!-- Option 2: Version Développeur -->
                 <div>
                     <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">👨‍💻 Version Développeur (Code Source)</h3>
-                    <p><strong>Prérequis :</strong> Python 3.12+ (requis par NiceGUI) sur Windows, macOS ou Linux[cite: 1].</p>
+                    <p><strong>Prérequis :</strong> Python 3.12+ (requis par NiceGUI) sur Windows, macOS ou Linux.</p>
                     
                     <pre><code># 1. Cloner le dépôt
-            git clone https://github.com/stevejcl/astro_dwarf_session.git
-            cd astro_dwarf_session
+git clone https://github.com/stevejcl/astro_dwarf_session.git
+cd astro_dwarf_session
 
-            # 2. Créer et activer un environnement virtuel
-            python -m venv myenv
-            myenv\Scripts\activate  # Windows (ou source myenv/bin/activate sous Linux/macOS)
+# 2. Créer et activer un environnement virtuel
+python -m venv myenv
+myenv\Scripts\activate  # Windows (ou source myenv/bin/activate sous Linux/macOS)
 
-            # 3. Installer les dépendances
-            python -m pip install -r requirements.txt
-            python -m pip install -r requirements-local.txt --target .</code></pre>
+# 3. Installer les dépendances
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt --target .</code></pre>
 
                     <p style="margin-top: 1rem;"><strong>Lancement de l'application :</strong></p>
                     <pre><code>python astro_dwarf_ui.py</code></pre>
@@ -266,7 +265,7 @@
         </div>
 
         <!-- ENGLISH CONTENT -->
-        <div id="en" class="lang active">
+        <div id="en" class="lang">
             <header>
                 <h1>🌌 Astro Dwarf Session</h1>
                 <p>Automated, multi-telescope imaging session manager for Dwarf II, Dwarf 3, and Dwarf Mini</p>
@@ -291,18 +290,17 @@
                     <li><strong>🖼️ Astro Session Explorer:</strong> Browse real astro sessions directly from device storage with detailed shooting metadata.</li>
                     <li><strong>👀 Read-Only Watch Mode (/watch):</strong> Safe spectator mode to share live previews and session updates across your network without control access.</li>
                     <li><strong>🔌 Integrated REST API:</strong> From any external web page, access your Dwarfs, check their status, and send sequences directly to them.</li>
-                    <li><strong>⚖️ Automatic Target Load Balancing:</strong> Automatically route targets to available telescopes of the same model.</li>                </ul>
+                    <li><strong>⚖️ Automatic Target Load Balancing:</strong> Automatically route targets to available telescopes of the same model.</li>
+                </ul>
             </section>
 
             <section>
                 <h2>📸 Interface Preview</h2>
                 <div class="gallery">
-                    <img src="https://github.com/user-attachments/assets/7e9a2e86-b1a8-4cee-b14f-4255d819f636" alt="Main Dashboard">
-                    <img src="https://github.com/user-attachments/assets/facd3ffc-03c1-4f30-9660-607ffd01b9f8" alt="Dashboard Capture Live"> 
-                    <img src="https://github.com/user-attachments/assets/dfb651e3-46fe-4b2a-b9ae-a344e4bdfb03" alt="Session Details">
-                    <img src="https://github.com/user-attachments/assets/92c88521-93c8-4871-ad7e-67c7e7867754" alt="Program Editor">
+                    <img src="https://github.com/user-attachments/assets/cd685d0f-505a-4468-9543-40224d2020b6" alt="Main Dashboard">
+                    <img src="https://github.com/user-attachments/assets/98211df4-4266-41f5-8ff0-516ef13b59c3" alt="Session Details">
+                    <img src="https://github.com/user-attachments/assets/e5a28f22-86f8-455c-93a0-c3d21811cc96" alt="Program Editor">
                     <img src="https://github.com/user-attachments/assets/13fa5367-5671-43e5-ae4b-88154625fcf3" alt="Astro Sessions Explorer">
-                    <img src="https://github.com/user-attachments/assets/78209d87-05c4-4ef6-81f2-ee9a8cb356cd" alt="View session detail">
                 </div>
             </section>
 
@@ -325,19 +323,19 @@
                 <!-- Option 2: Developer Mode -->
                 <div>
                     <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem;">👨‍💻 Developer Mode (Source Code)</h3>
-                    <p><strong>Prerequisites:</strong> Python 3.12+ (required by NiceGUI) on Windows, macOS, or Linux[cite: 1].</p>
+                    <p><strong>Prerequisites:</strong> Python 3.12+ (required by NiceGUI) on Windows, macOS, or Linux.</p>
                     
                     <pre><code># 1. Clone the repository
-            git clone https://github.com/stevejcl/astro_dwarf_session.git
-            cd astro_dwarf_session
+git clone https://github.com/stevejcl/astro_dwarf_session.git
+cd astro_dwarf_session
 
-            # 2. Create and activate a virtual environment
-            python -m venv myenv
-            myenv\Scripts\activate  # Windows (or source myenv/bin/activate on Linux/macOS)
+# 2. Create and activate a virtual environment
+python -m venv myenv
+myenv\Scripts\activate  # Windows (or source myenv/bin/activate on Linux/macOS)
 
-            # 3. Install dependencies
-            python -m pip install -r requirements.txt
-            python -m pip install -r requirements-local.txt --target .</code></pre>
+# 3. Install dependencies
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt --target .</code></pre>
 
                     <p style="margin-top: 1rem;"><strong>Running the application:</strong></p>
                     <pre><code>python astro_dwarf_ui.py</code></pre>
@@ -352,14 +350,33 @@
 
     <script>
         function switchLang(lang) {
+            lang = lang.toLowerCase();
+            
+            // Masquer toutes les sections et désactiver tous les boutons
             document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             
-            document.getElementById(lang).classList.add('active');
+            // Activer le contenu et le bouton correspondant
+            const targetContent = document.getElementById(lang);
+            const targetBtn = document.getElementById('btn-' + lang);
             
-            const btnIndex = lang === 'fr' ? 0 : 1;
-            document.querySelectorAll('.lang-btn')[btnIndex].classList.add('active');
+            if (targetContent && targetBtn) {
+                targetContent.classList.add('active');
+                targetBtn.classList.add('active');
+            }
         }
+
+        // Lecture du paramètre URL ?lang=... au chargement
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+
+            if (langParam && (langParam.toLowerCase() === 'fr' || langParam.toLowerCase() === 'en')) {
+                switchLang(langParam);
+            } else {
+                switchLang('en'); // Anglais par défaut
+            }
+        });
     </script>
 
 </body>
