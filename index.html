@@ -276,12 +276,6 @@
                     <img src="https://github.com/user-attachments/assets/92c88521-93c8-4871-ad7e-67c7e7867754" alt="Éditeur de programmes">
                     <img src="https://github.com/user-attachments/assets/13fa5367-5671-43e5-ae4b-88154625fcf3" alt="Explorateur de sessions">
                     <img src="https://github.com/user-attachments/assets/2bc6ea28-57f8-459c-af9b-4ae623e95aa9" alt="Vue détails session">               </div>
-
-                <!-- Lightbox -->
-                <div id="lightbox" class="lightbox">
-                    <button class="lightbox-close" aria-label="Close">&times;</button>
-                    <img id="lightbox-image" src="" alt="">
-                </div>
             </section>
 
             <section>
@@ -369,11 +363,6 @@ python -m pip install -r requirements-local.txt --target .</code></pre>
                     <img src="https://github.com/user-attachments/assets/13fa5367-5671-43e5-ae4b-88154625fcf3" alt="Astro Sessions Explorer">
                     <img src="https://github.com/user-attachments/assets/2bc6ea28-57f8-459c-af9b-4ae623e95aa9" alt="View session detail">
                 </div>
-                <!-- Lightbox -->
-                <div id="lightbox" class="lightbox">
-                    <button class="lightbox-close" aria-label="Close">&times;</button>
-                    <img id="lightbox-image" src="" alt="">
-                </div>
             </section>
 
             <section>
@@ -418,6 +407,13 @@ python -m pip install -r requirements-local.txt --target .</code></pre>
                 <p>Released under the MIT License • Built for the Dwarf telescope community</p>
             </footer>
         </div>
+    </div>
+
+    <!-- Lightbox: one for both languages (an id must be unique: the one inside the hidden
+         French block was the one used, so nothing showed in English) -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightbox-image" src="" alt="">
     </div>
 
     <script>
